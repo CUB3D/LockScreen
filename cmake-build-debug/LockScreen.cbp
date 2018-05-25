@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LockScreen"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\scripts\;CMake Files\scripts\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cub3d/Development/LockScreen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/cub3d/Development/LockScreen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/cub3d/Development/LockScreen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LockScreen">
+				<Option output="/home/cub3d/Development/LockScreen/cmake-build-debug/LockScreen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cub3d/Development/LockScreen/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 LockScreen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LockScreen/fast">
+				<Option output="/home/cub3d/Development/LockScreen/cmake-build-debug/LockScreen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cub3d/Development/LockScreen/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../include/c++/8.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 LockScreen/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cub3d/Development/LockScreen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cub3d/Development/LockScreen/Image.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/Image.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/TTFFont.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/TTFFont.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/UIRenderer.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/UIRenderer.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/XCBInstance.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/XCBInstance.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/main.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/BaseWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/BaseWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/BatteryWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/BatteryWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/ClockWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/ClockWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/PasswordEntryWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/widgets/PasswordEntryWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/scripts/build/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/scripts/build/FindSDL2_image.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/scripts/build/FindSDL2_ttf.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/LockScreen/scripts/build/FindX11_XCB.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

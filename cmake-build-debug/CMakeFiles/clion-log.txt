@@ -1,0 +1,9 @@
+/opt/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/cub3d/Development/LockScreen
+SDL2 Found: /usr/include/SDL2:/usr/lib/libSDL2main.a;/usr/lib/libSDL2.so;-lpthread
+SDL2_image Found: /usr/include/SDL2:/usr/lib/libSDL2_image.so
+SDL2_ttf Found: /usr/include/SDL2:/usr/lib/libSDL2_ttf.so
+X11: /usr/include:
+XCB: /usr/include:/usr/lib/libX11-xcb.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cub3d/Development/LockScreen/cmake-build-debug

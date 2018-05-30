@@ -1,3 +1,0 @@
-/home/cub3d/Development/LockScreen/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/cub3d/Development/LockScreen/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/cub3d/Development/LockScreen/cmake-build-debug/CMakeFiles/LockScreen.dir

@@ -11,5 +11,5 @@ void BatteryWidget::draw() {
 BatteryWidget::BatteryWidget(std::shared_ptr<UIRenderer> render) {
     this->renderer = render;
 
-    this->background = std::make_unique<Image>(this->renderer->windowRenderer, "/home/cub3d/Development/LockScreen/res/img/empty-battery.png");
+    this->background = std::make_unique<Image>("/home/cub3d/Development/LockScreen/res/img/empty-battery.png");
 }

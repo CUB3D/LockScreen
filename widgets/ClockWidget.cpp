@@ -18,7 +18,7 @@ void ClockWidget::draw() {
              this->timeInstance->tm_min,
              this->timeInstance->tm_sec);
 
-    font->drawString(buffer, this->x, this->y);
+    font->drawString(buffer, this->x, this->y, this->renderer);
 }
 
 bool ClockWidget::isDirty() {

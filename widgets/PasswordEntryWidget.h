@@ -12,6 +12,7 @@
 class PasswordEntryWidget : public BaseWidget {
 public:
     std::unique_ptr<Image> background;
+    int lastPasswordLength;
 
     explicit PasswordEntryWidget(std::shared_ptr<UIRenderer> pRenderer);
 

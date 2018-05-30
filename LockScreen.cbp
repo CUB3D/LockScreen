@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LockScreen"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\scripts\;CMake Files\scripts\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cub3d/Development/git/LockScreen"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/cub3d/Development/git/LockScreen"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LockScreen">
+				<Option output="/home/cub3d/Development/git/LockScreen/LockScreen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cub3d/Development/git/LockScreen"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/include/rapidjson"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 LockScreen"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LockScreen/fast">
+				<Option output="/home/cub3d/Development/git/LockScreen/LockScreen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cub3d/Development/git/LockScreen"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/include/rapidjson"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 LockScreen/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/cub3d/Development/git/LockScreen"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/cub3d/Development/git/LockScreen/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/Config.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/FontManager.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/Image.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/Image.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/TTFFont.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/TTFFont.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/UIRenderer.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/UIRenderer.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/Util.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/XCBInstance.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/XCBInstance.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/main.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/main.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/BaseWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/BaseWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/BatteryWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/BatteryWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/ClockWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/ClockWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/PasswordEntryWidget.cpp">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/widgets/PasswordEntryWidget.h">
+			<Option target="LockScreen"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/scripts/build/FindRapidJSON.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/scripts/build/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/scripts/build/FindSDL2_image.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/scripts/build/FindSDL2_ttf.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+		<Unit filename="/home/cub3d/Development/git/LockScreen/scripts/build/FindX11_XCB.cmake">
+			<Option virtualFolder="CMake Files\scripts\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

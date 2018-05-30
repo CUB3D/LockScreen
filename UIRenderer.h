@@ -7,13 +7,13 @@
 
 
 #include <SDL.h>
-
+//TBH this should be a struct
 class UIRenderer {
 public:
     SDL_Renderer* windowRenderer;
     SDL_Rect screenSize;
 
-    void drawRoundedRect(int x, int y, int width, int height, int radius, SDL_Color color);
+    UIRenderer(SDL_Renderer* renderer, SDL_Rect screenSize);
 };
 
 

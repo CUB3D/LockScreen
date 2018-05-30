@@ -9,16 +9,18 @@
 #include <string>
 #include <SDL_image.h>
 #include <iostream>
+#include "UIRenderer.h"
 
 class Image {
 public:
     SDL_Texture* image;
-    SDL_Renderer* windowRenderer;
     SDL_Rect size;
+    bool init = false;
+    std::string path;
 
-    Image(SDL_Renderer* render, const std::string& path);
+    Image(const std::string &path);
 
-    void draw(const int x, const int y, const double angle);
+    void draw(std::shared_ptr<UIRenderer> renderer, const int x, const int y, const double angle);
 
     ~Image();
 };

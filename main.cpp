@@ -14,15 +14,21 @@
     #include <ev.h>
 #undef explicit
 
+#include "main.h"
 #include "TTFFont.h"
 #include "XCBInstance.h"
 #include "Image.h"
+#include "Config.h"
+#include "ResourceManager.h"
 
 #include "widgets/ClockWidget.h"
 #include "widgets/PasswordEntryWidget.h"
 
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
+
 bool running = true;
-std::string ss;
+std::string ss = "";
 std::unique_ptr<XCBInstance> xcb;
 bool screenDirty;
 
@@ -31,7 +37,7 @@ void quit(int exitcode) {
     exit(exitcode);
 }
 
-SDL_Renderer* createWindow()
+SDL_Renderer* createWindow(const int width, const int height)
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
     {
@@ -39,7 +45,7 @@ SDL_Renderer* createWindow()
        // quit(ErrorCodes::SDL_INITIALIZATION_FAIL);
     }
 
-    auto window = SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1366, 768, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN);
+    auto window = SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN);
 
     if (!window)
     {
@@ -213,18 +219,20 @@ static void xcb_got_event(EV_P_ struct ev_io *w, int revents) {
 
 int main() {
     //system("scrot /tmp/desktop.png");
-    system("convert -resize 20% -filter Gaussian -define 'filter:sigma=1.5' -resize 500.5% /home/cub3d/Pictures/Wallpaper.png /tmp/desktop.png");
+    //system("convert -resize 20% -filter Gaussian -define 'filter:sigma=1.5' -resize 500.5% /home/cub3d/Pictures/Wallpaper.png /tmp/desktop.png");
 
     xcb = std::make_unique<XCBInstance>();
     xcb->setup_xkb();
     xcb->loadKeymap();
     xcb->loadComposeTable("en_GB.utf8");
     xcb->genNewState();
-    xcb->setupMouseAndKeyboardGrabbing();
+    //xcb->setupMouseAndKeyboardGrabbing();
 
-    auto render = createWindow();
+    SDL_Rect screenSize = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
 
-    SDL_Rect screenSize = {0, 0, 1366, 768};
+    auto render = createWindow(screenSize.w, screenSize.h);
+
+    loadConfig("config.json");
 
     ev_io_init(xcb->xcb_watcher, xcb_got_event, xcb_get_file_descriptor(xcb->connection), EV_READ);
     ev_io_start(EV_DEFAULT, xcb->xcb_watcher);
@@ -235,29 +243,23 @@ int main() {
     ev_prepare_init(xcb->xcb_prepare, xcb_prepare_cb);
     ev_prepare_start(EV_DEFAULT, xcb->xcb_prepare);
 
-    TTFFont mainFont("/home/cub3d/Development/LockScreen/res/fonts/IBMPlexSans-Regular.ttf", 14, render);
-    mainFont.color = (SDL_Color) {255, 255, 255, 255};
+    std::shared_ptr<TTFFont> mainFont = GET_FONT("Default");
+    std::shared_ptr<TTFFont> detailFont = GET_FONT("Bold");
 
-    TTFFont detailFont("/home/cub3d/Development/LockScreen/res/fonts/IBMPlexSans-Bold.ttf", 14, render);
-    detailFont.color = (SDL_Color) {255, 255, 255, 255};
-
-    UIRenderer renderer;
-    renderer.windowRenderer = render;
-    renderer.screenSize = screenSize;
+    std::shared_ptr<UIRenderer> renderer = std::make_shared<UIRenderer>(render, screenSize);
 
     //TODO: flip args
-    Image img(render, "/tmp/desktop.png");
-    Image usr(render, "/home/cub3d/Development/LockScreen/res/img/img.png");
-    Image dot(render, "/home/cub3d/Development/LockScreen/res/img/dot.png");
+    std::shared_ptr<Image> img = GET_IMAGE("Wallpaper");//(basePath + "blured-wallpaper.png");
+    std::shared_ptr<Image> usr = GET_IMAGE("User"); //(basePath + "img/img.png");
+    std::shared_ptr<Image> dot = GET_IMAGE("Dot"); //(basePath + "img/dot.png");
 
     ClockWidget wid;
-    wid.font = std::shared_ptr<TTFFont>(&detailFont);
-    wid.x = screenSize.w - detailFont.stringWidth("00:00:00") - 2;
+    wid.renderer = renderer;
+    wid.font = detailFont;
+    wid.x = screenSize.w - detailFont->stringWidth("00:00:00") - 2;
     wid.y = 2;
 
-    std::shared_ptr<UIRenderer> ui = std::shared_ptr<UIRenderer>(&renderer);
-
-    PasswordEntryWidget pass(ui);
+    PasswordEntryWidget pass(renderer);
     pass.x = screenSize.w / 2;
     pass.y = screenSize.h / 2 + 32 * 5;
 
@@ -268,24 +270,25 @@ int main() {
             screenDirty = true;
         }
 
+        ev_invoke(EV_DEFAULT, xcb->xcb_check, 0);
+
         if(screenDirty) {
             SDL_RenderClear(render);
 
-            img.draw(0, 0, 0);
-            usr.draw(screenSize.w / 2 - usr.size.w / 2, screenSize.h / 2 - usr.size.h / 2 - 16, 0);
+            img->draw(renderer, 0, 0, 0);
+            usr->draw(renderer, screenSize.w / 2 - usr->size.w / 2, screenSize.h / 2 - usr->size.h / 2 - 16, 0);
 
-            mainFont.drawString("CUB3D", screenSize.w / 2 - mainFont.stringWidth("CUB3D") / 2,
-                            screenSize.h / 2 + usr.size.h / 2 + 8);
+            mainFont->drawString("CUB3D", screenSize.w / 2 - mainFont->stringWidth("CUB3D") / 2,
+                            screenSize.h / 2 + usr->size.h / 2 + 8, renderer);
 
             wid.draw();
 
             pass.draw();
 
             for(int x = 0; x < ss.length(); x++) {
-                dot.draw(pass.x - pass.background->size.w / 2 + dot.size.w * x + 2, pass.y + pass.background->size.h / 2 + dot.size.h / 2, 0);
+                dot->draw(renderer, pass.x - pass.background->size.w / 2 + dot->size.w * x + 2,
+                         pass.y + pass.background->size.h / 2 + dot->size.h / 2, 0);
             }
-
-            ev_invoke(EV_DEFAULT, xcb->xcb_check, 0);
 
             SDL_RenderPresent(render);
 

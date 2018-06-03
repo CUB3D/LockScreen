@@ -23,6 +23,7 @@
 
 #include "widgets/ClockWidget.h"
 #include "widgets/PasswordEntryWidget.h"
+#include "widgets/StaticImageWidget.h"
 
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
@@ -232,7 +233,7 @@ int main() {
 
     auto render = createWindow(screenSize.w, screenSize.h);
 
-    loadConfig("config.json");
+    auto widgets = loadConfig("/home/cub3d/Development/git/LockScreen/config.json");
 
     ev_io_init(xcb->xcb_watcher, xcb_got_event, xcb_get_file_descriptor(xcb->connection), EV_READ);
     ev_io_start(EV_DEFAULT, xcb->xcb_watcher);
@@ -249,9 +250,9 @@ int main() {
     std::shared_ptr<UIRenderer> renderer = std::make_shared<UIRenderer>(render, screenSize);
 
     //TODO: flip args
-    std::shared_ptr<Image> img = GET_IMAGE("Wallpaper");//(basePath + "blured-wallpaper.png");
+    //std::shared_ptr<Image> img = GET_IMAGE("Wallpaper");//(basePath + "blured-wallpaper.png");
     std::shared_ptr<Image> usr = GET_IMAGE("User"); //(basePath + "img/img.png");
-    std::shared_ptr<Image> dot = GET_IMAGE("Dot"); //(basePath + "img/dot.png");
+     //(basePath + "img/dot.png");
 
     ClockWidget wid;
     wid.renderer = renderer;
@@ -265,8 +266,11 @@ int main() {
 
     SDL_SetRenderDrawColor(render, 0, 255, 255, 255);
 
+    //StaticImageWidget img("Wallpaper");
+    //img.renderer = renderer;
+
     while(running) {
-        if(wid.isDirty() || pass.isDirty()) {
+        if(wid.isDirty() || pass.isDirty() || true) {
             screenDirty = true;
         }
 
@@ -275,7 +279,6 @@ int main() {
         if(screenDirty) {
             SDL_RenderClear(render);
 
-            img->draw(renderer, 0, 0, 0);
             usr->draw(renderer, screenSize.w / 2 - usr->size.w / 2, screenSize.h / 2 - usr->size.h / 2 - 16, 0);
 
             mainFont->drawString("CUB3D", screenSize.w / 2 - mainFont->stringWidth("CUB3D") / 2,
@@ -285,9 +288,9 @@ int main() {
 
             pass.draw();
 
-            for(int x = 0; x < ss.length(); x++) {
-                dot->draw(renderer, pass.x - pass.background->size.w / 2 + dot->size.w * x + 2,
-                         pass.y + pass.background->size.h / 2 + dot->size.h / 2, 0);
+            for(auto& widget : widgets) {
+                widget->renderer =renderer;
+                widget->draw();
             }
 
             SDL_RenderPresent(render);

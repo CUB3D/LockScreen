@@ -33,7 +33,7 @@ void Image::draw(std::shared_ptr<UIRenderer> renderer, const int x, const int y,
     drawRect.x = x;
     drawRect.y = y;
 
-    if(!SDL_RenderCopyEx(renderer->windowRenderer, this->image, nullptr, &drawRect, angle, nullptr, SDL_FLIP_NONE)) {
+    if(SDL_RenderCopyEx(renderer->windowRenderer, this->image, nullptr, &drawRect, angle, nullptr, SDL_FLIP_NONE) == -1) {
         printf("Unable to render image: %s\n", IMG_GetError());
         SDL_ClearError();
     }

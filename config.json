@@ -1,12 +1,12 @@
 {
   "Fonts": {
     "Default": {
-      "Path": "res/fonts/IBMPlexSans-Regular.ttf",
+      "Path": "/home/cub3d/Development/git/LockScreen/res/fonts/IBMPlexSans-Regular.ttf",
       "Size": 14,
       "Colour": "ff000000"
     },
     "Bold": {
-      "Path": "res/fonts/IBMPlexSans-Bold.ttf",
+      "Path": "/home/cub3d/Development/git/LockScreen/res/fonts/IBMPlexSans-Bold.ttf",
       "Size": 14,
       "Colour": "ff000000"
     }
@@ -29,6 +29,11 @@
       "X": 2,
       "Y": 2,
       "H-Align": "right"
+    },
+    "Image": {
+      "X": 0,
+      "Y": 0,
+      "Name": "Wallpaper"
     }
   }
 }

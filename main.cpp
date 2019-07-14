@@ -227,13 +227,13 @@ int main() {
     xcb->loadKeymap();
     xcb->loadComposeTable("en_GB.utf8");
     xcb->genNewState();
-    //xcb->setupMouseAndKeyboardGrabbing();
+    xcb->setupMouseAndKeyboardGrabbing();
 
     SDL_Rect screenSize = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
 
     auto render = createWindow(screenSize.w, screenSize.h);
 
-    auto widgets = loadConfig("/home/cub3d/Development/git/LockScreen/config.json");
+    auto widgets = loadConfig("./config.json");
 
     ev_io_init(xcb->xcb_watcher, xcb_got_event, xcb_get_file_descriptor(xcb->connection), EV_READ);
     ev_io_start(EV_DEFAULT, xcb->xcb_watcher);

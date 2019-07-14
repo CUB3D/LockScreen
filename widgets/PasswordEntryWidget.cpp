@@ -29,5 +29,6 @@ bool PasswordEntryWidget::isDirty() {
 PasswordEntryWidget::PasswordEntryWidget(std::shared_ptr<UIRenderer> pRenderer) {
     this->renderer = pRenderer;
 
-    this->background = std::make_unique<Image>("/home/cub3d/Development/git/LockScreen/res/img/background.png");
+    //TODO: use resource manager
+    this->background = std::make_unique<Image>("res/img/background.png");
 }

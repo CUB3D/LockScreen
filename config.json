@@ -1,25 +1,25 @@
 {
   "Fonts": {
     "Default": {
-      "Path": "/home/cub3d/Development/git/LockScreen/res/fonts/IBMPlexSans-Regular.ttf",
+      "Path": "res/fonts/IBMPlexSans-Regular.ttf",
       "Size": 14,
       "Colour": "ff000000"
     },
     "Bold": {
-      "Path": "/home/cub3d/Development/git/LockScreen/res/fonts/IBMPlexSans-Bold.ttf",
+      "Path": "res/fonts/IBMPlexSans-Bold.ttf",
       "Size": 14,
       "Colour": "ff000000"
     }
   },
   "Images" :{
     "Wallpaper": {
-      "Path": "/home/cub3d/Development/git/LockScreen/res/blured-wallpaper.png"
+      "Path": "res/blured-wallpaper.png"
     },
     "Dot": {
-      "Path": "/home/cub3d/Development/git/LockScreen/res/img/dot.png"
+      "Path": "res/img/dot.png"
     },
     "User": {
-      "Path": "/home/cub3d/Development/git/LockScreen/res/img/img.png"
+      "Path": "res/img/img.png"
     }
   },
   "Widgets": {
